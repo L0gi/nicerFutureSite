@@ -1,3 +1,4 @@
+
 @-moz-document url-prefix("https://pucatrade.com/trades/") {
 .send-card-area-wrapper .grid .item {
     height: 300px !important;
@@ -290,3 +291,15 @@ min-height: 200px;
     min-height: 200px;
 }
 /* https://www.reddit.com/user/Siliticx -- end*/
+.point .price.small {
+    float:right;
+    min-width:130px;
+}
+
+.point .max_buy.input-coin .price.small{
+min-width:0px; 
+}
+
+.card-list-area .items .item .point, .card-list-area.editable .items .item .point{
+min-width:240px;
+}
