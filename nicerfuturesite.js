@@ -51,7 +51,7 @@
         console.log("So many cards: ");
         console.log(elements.length);
         var d = document.createElement("div");
-        d.innerHTML = "<span class=\"text letter\" data-reactid=\".1.1.$=1$modal=01composeTrade.0.0.2.1.1.2.0\">Cards: "+elements.length+"</span>"
+        d.innerHTML = "<span class=\"text letter\" >Cards: "+elements.length+"</span>"
         var totalcards = d.firstChild;
         
         var cost = document.getElementsByClassName("cost");
