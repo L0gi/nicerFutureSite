@@ -303,19 +303,27 @@ min-width:0px;
 .card-list-area .items .item .point, .card-list-area.editable .items .item .point{
 min-width:240px;
 }
-.item .content .receiver .author .infco{
-position:relative;
-}
+
 .item .content .receiver .author .info .price.small{
-float:right;
+	float:right;
     position:absolute;
     right:58px;
-    top:6px;
+    top:0px;
 }
 
 .item .content .receiver .author .info .user-name{
-position:absolute;
+	position:absolute;
     right:58px;
-    top:37px;
-    
+    top:33px;
+}
+
+.item .content .receiver .author .image.image-responsive.left.user-avatar{
+	position:relative;
+    bottom:10px;
+}
+
+.item .content .receiver .author .info .user-name .icon{
+	position:absolute;
+    top:-3px;
+    left:-19px;
 }
