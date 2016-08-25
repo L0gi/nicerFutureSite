@@ -7,7 +7,7 @@ http://imgur.com/a/XgJOg
 
 @Firefoxusers: As far as I understand you have to import each @-moz-document block into its own style when adding the styles in firefox
 
-Stylish in Chrome allows to copy paste just the whole block into a new style and interpretes the different blocks on its own.
+@Chromeusers: Click on the Stylish button, go to "manage installed scripts", create a new script, now this is iportant: click on "impoart" and paste the pucastylish contentes there, then click overwrite style, give your newly created style a name and save it.
 
 Some scripts to make the new futuresite of pucatrade a bit more pleasing to the eye
 
