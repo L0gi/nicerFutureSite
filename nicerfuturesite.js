@@ -12,7 +12,7 @@
 
 (function() {
     'use strict';
-    waitForKeyElements ("#trades > div > div.card-list-area.active > div > span > div:nth-child(1)", actionFunction);
+    waitForKeyElements ("#trades .item", actionFunction);
 
     function actionFunction (jNode) {
     //-- DO WHAT YOU WANT TO THE TARGETED ELEMENTS HERE.
