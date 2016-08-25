@@ -1,4 +1,3 @@
-
 @-moz-document url-prefix("https://pucatrade.com/trades/") {
 .send-card-area-wrapper .grid .item {
     height: 300px !important;
@@ -44,6 +43,32 @@
         transform: scale(1.08);
         z-index: 1
     }
+    .item .content .receiver .author .info .price.small {
+        float: right;
+        position: absolute;
+        right: 58px;
+        top: 0px;
+    }
+    .item .content .receiver .author .info .user-name {
+        position: absolute;
+        right: 58px;
+        top: 33px;
+    }
+    .item .content .receiver .author .image.image-responsive.left.user-avatar {
+        position: relative;
+        bottom: 10px;
+    }
+    .item .content .receiver .author .info .user-name .icon {
+        position: absolute;
+        top: -3px;
+        left: -19px;
+    }
+    .item .content .text {
+        text-shadow: 1px 1px 1px black, 1px -1px 1px black, -1px 1px 1px black, -1px -1px 1px black;
+    }
+    .item .content .receiver .author .user-name {
+        text-shadow: 1px 1px 1px black, 1px -1px 1px black, -1px 1px 1px black, -1px -1px 1px black;
+    }
 }
 }
 
@@ -51,18 +76,16 @@
 .compose-area-wrapper .filter-item {
     width: 100%;
 }
-
 /* remove italics */
+
 dfn {
     font-style: normal
 }
-
 .form-black .form-group.checkbox .hint {
     opacity: .5;
     font-style: normal;
     display: block
 }
-
 .card-detail-area .main .content .quote {
     font-family: "Times New Roman", Times, serif;
     font-style: normal;
@@ -70,7 +93,6 @@ dfn {
     opacity: .6;
     max-width: 280px
 }
-
 .profile-collection-area .description {
     font-family: AGaramond, Times, serif;
     font-size: 14px;
@@ -79,7 +101,6 @@ dfn {
     opacity: .3;
     margin-bottom: 25px
 }
-
 .home-area-9 .send-card-area-wrapper .grid .time {
     position: absolute;
     opacity: .3;
@@ -89,7 +110,6 @@ dfn {
     width: 100%;
     text-align: center
 }
-
 .onboard-area .hint {
     margin: auto auto 20px;
     max-width: 280px;
@@ -97,13 +117,10 @@ dfn {
     font-weight: 200;
     font-style: normal
 }
-
 .onboard-area-7 .form .item .foil {
     font-size: 17px;
     font-style: normal
 }
-
-
 .settings-area .description {
     font-family: AGaramond, Times, serif;
     font-size: 14px;
@@ -112,20 +129,17 @@ dfn {
     opacity: .3;
     margin-bottom: 25px
 }
-
 .shipping-area-wrapper .recommended .item .hint {
     font-weight: 600;
     font-style: normal;
     font-size: 14px;
     opacity: .3
 }
-
 .shipping-area-wrapper .tips .hint {
     font-weight: 600;
     font-style: normal;
     font-size: 14px
 }
-
 .receiving-area-wrapper .details .info .foil,
 .sending-area-wrapper .details .info .foil {
     font-family: AGaramond, Times, serif;
@@ -134,31 +148,26 @@ dfn {
     font-style: normal;
     margin: 10px 0
 }
-
 .pricing-area.page-2 .award {
     min-height: 25px;
     font-style: normal;
     font-size: 13px;
     opacity: .6
 }
-
 .pricing-area .description {
     font-size: 15px;
     font-style: normal;
     margin-bottom: 25px
 }
-
 .pricing-area .actions .action {
     padding: 20px 0;
     font-size: 12px;
     font-style: normal
 }
-
 .purchase-result-area .info .text {
     font-style: normal;
     margin-bottom: 10px
 }
-
 .popup-wrapper .popup-billing .for,
 .popup-wrapper .popup-pay-points .for,
 .popup-wrapper .popup-purchase-points .for,
@@ -167,7 +176,6 @@ dfn {
     font-family: AGaramond, Times, serif;
     font-style: normal
 }
-
 .card-list-area .items .item .foil,
 .card-list-area.editable .items .item .foil {
     font-family: AGaramond, Times, serif;
@@ -177,25 +185,21 @@ dfn {
     letter-spacing: 0;
     text-transform: none
 }
-
 .card-grid-area .item .overlay .content .foil {
     font-family: AGaramond, Times, serif;
     font-weight: 600;
     font-size: 15px;
     font-style: normal
 }
-
 .card-grid-area .item .overlay-tab .tab-heading .tab.foil {
     float: right;
     font-family: AGaramond, Times, serif;
     font-size: 13px;
     font-style: normal
 }
-
 .case-area .list .body .card .foil {
     font-style: normal
 }
-
 .popup-cases .main-content .cards .item .info .foil {
     font-size: 15px;
     font-family: AGaramond, Times, serif;
@@ -204,12 +208,10 @@ dfn {
     opacity: .8;
     margin: 8px 0
 }
-
 .popup-cases .main-content .cards .item .info .description {
     font-size: 13px;
     font-style: normal
 }
-
 .popup-case-resolution .hint,
 .popup-cases .hint {
     font-size: 13px;
@@ -220,7 +222,6 @@ dfn {
     text-align: center;
     max-width: 400px
 }
-
 .popup-case-resolution .contact textarea {
     width: 100%;
     height: 200px;
@@ -228,7 +229,6 @@ dfn {
     color: #666;
     font-style: normal
 }
-
 .popup-case-resolution .pricing .column .action {
     padding: 20px 0;
     font-size: 12px;
@@ -236,8 +236,8 @@ dfn {
     width: 100%
 }
 /* remove italics end*/
-
 /* Thank you https://www.reddit.com/user/qrith */
+
 @media screen and (min-width: 600px) {
     .card-list-area .items .item.hover, .card-list-area .items .item:hover, .card-list-area.editable .items .item.hover, .card-list-area.editable .items .item:hover {
         -webkit-transition: none;
@@ -274,7 +274,7 @@ dfn {
         opacity: 1
     }
 }
-}
+
 /* Thank you https://www.reddit.com/user/qrith -- end*/
 /* Thank you https://www.reddit.com/user/Siliticx */
 
@@ -284,59 +284,24 @@ dfn {
 .profile-area {
     padding-bottom: 20px;
 }
-.force-height.profile-area-wrapper{
-min-height: 200px;
+.force-height.profile-area-wrapper {
+    min-height: 200px;
 }
 .profile-area-wrapper {
     min-height: 200px;
 }
 /* https://www.reddit.com/user/Siliticx -- end*/
+
 .point .price.small {
-    float:right;
-    min-width:130px;
+    float: right;
+    min-width: 130px;
+}
+.point .max_buy.input-coin .price.small {
+    min-width: 0px;
+}
+.card-list-area .items .item .point,
+.card-list-area.editable .items .item .point {
+    min-width: 240px;
 }
 
-.point .max_buy.input-coin .price.small{
-min-width:0px; 
-}
-
-.card-list-area .items .item .point, .card-list-area.editable .items .item .point{
-min-width:240px;
-}
-
-.item .content .receiver .author .info .price.small{
-	float:right;
-    position:absolute;
-    right:58px;
-    top:0px;
-}
-
-.item .content .receiver .author .info .user-name{
-	position:absolute;
-    right:58px;
-    top:33px;
-}
-
-.item .content .receiver .author .image.image-responsive.left.user-avatar{
-	position:relative;
-    bottom:10px;
-}
-
-.item .content .receiver .author .info .user-name .icon{
-	position:absolute;
-    top:-3px;
-    left:-19px;
-}
-.item .content .text {
-	text-shadow:  1px  1px 1px black,
-                  1px -1px 1px black,
-                 -1px  1px 1px black,
-                 -1px -1px 1px black;
-}
-
-.item .content .receiver .author .user-name {
-    text-shadow:  1px  1px 1px black,
-                  1px -1px 1px black,
-                 -1px  1px 1px black,
-                 -1px -1px 1px black;
 }
