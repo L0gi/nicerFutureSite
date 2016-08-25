@@ -1,4 +1,4 @@
-://pucatrade.com/trades/packages") {
+@-moz-document url("https://pucatrade.com/trades/packages") {
 .send-card-area-wrapper .grid .item {
     height: 300px !important;
 }
