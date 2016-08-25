@@ -1,4 +1,9 @@
 # nicerFutureSite
+screenshots: 
+
+http://imgur.com/a/vkpYC
+http://imgur.com/a/XgJOg
+
 
 @Firefoxusers: As far as I understand you have to import each @-moz-document block into its own style when adding the styles in firefox
 
