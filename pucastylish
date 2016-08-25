@@ -1,0 +1,83 @@
+://pucatrade.com/trades/packages") {
+.send-card-area-wrapper .grid .item {
+    height: 300px !important;
+}
+@media screen and (min-width: 1300px) {
+    .send-card-area-wrapper .grid .item {
+        width: 19%;
+    }
+}
+.send-card-area-wrapper .grid .item {
+    padding: 15px 10px 0 !important;
+}
+.send-card-area-wrapper .grid .item .receiver .user-avatar {
+    margin-right: 10px;
+    float: right;
+}
+.send-card-area-wrapper .grid .price {
+    margin-bottom: 10px;
+    float: left;
+}
+.send-card-area-wrapper .grid .item .receiver .info {
+    float: right;
+    text-align: right;
+}
+.send-card-area-wrapper .grid .price.small {
+    width: 80px;
+    float: right;
+}
+@media screen and (min-width:600px) {
+    .grid .item.hover, .grid .item:hover {
+        -webkit-transition: none;
+        -moz-transition: none;
+        transition: none;
+        transform: none;
+        border: 1px solid white;
+    }
+    .grid .item.hover .bg,
+    .grid .item:hover .bg {
+        opacity: .85;
+        transform: scale(1.08);
+        z-index: 1
+    }
+}
+}
+
+@-moz-document url-prefix("https://pucatrade.com/") {
+@media screen and (min-width: 600px) {
+    .card-list-area .items .item.hover, .card-list-area .items .item:hover, .card-list-area.editable .items .item.hover, .card-list-area.editable .items .item:hover {
+        -webkit-transition: none;
+        -moz-transition: none;
+        transition: none;
+        transform: none;
+        border: 1px solid white;
+    }
+    .card-list-area .items .item.hover .bg,
+    .card-list-area .items .item:hover .bg,
+    .card-list-area.editable .items .item.hover .bg,
+    .card-list-area.editable .items .item:hover .bg {
+        opacity: .9;
+        filter: alpha(opacity=90)
+    }
+    .card-list-area .items .item.hover .moveicon,
+    .card-list-area .items .item:hover .moveicon,
+    .card-list-area.editable .items .item.hover .moveicon,
+    .card-list-area.editable .items .item:hover .moveicon {
+        opacity: .4
+    }
+    .card-list-area .items .item.hover .clone,
+    .card-list-area .items .item.hover .moveicon.hover,
+    .card-list-area .items .item.hover .moveicon:hover,
+    .card-list-area .items .item:hover .clone,
+    .card-list-area .items .item:hover .moveicon.hover,
+    .card-list-area .items .item:hover .moveicon:hover,
+    .card-list-area.editable .items .item.hover .clone,
+    .card-list-area.editable .items .item.hover .moveicon.hover,
+    .card-list-area.editable .items .item.hover .moveicon:hover,
+    .card-list-area.editable .items .item:hover .clone,
+    .card-list-area.editable .items .item:hover .moveicon.hover,
+    .card-list-area.editable .items .item:hover .moveicon:hover {
+        opacity: 1
+    }
+}
+}
