@@ -26,6 +26,9 @@
     width: 80px;
     float: right;
 }
+.compose-area-wrapper .filter-item {
+    width: 100%;
+}
 @media screen and (min-width:600px) {
     .grid .item.hover, .grid .item:hover {
         -webkit-transition: none;
