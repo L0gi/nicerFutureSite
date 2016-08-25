@@ -47,6 +47,9 @@
 }
 
 @-moz-document url-prefix("https://pucatrade.com/") {
+.compose-area-wrapper .filter-item {
+    width: 100%;
+}
 /* Thank you https://www.reddit.com/user/qrith */
 @media screen and (min-width: 600px) {
     .card-list-area .items .item.hover, .card-list-area .items .item:hover, .card-list-area.editable .items .item.hover, .card-list-area.editable .items .item:hover {
