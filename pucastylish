@@ -274,3 +274,19 @@ dfn {
     }
 }
 }
+/* Thank you https://www.reddit.com/user/qrith -- end*/
+/* Thank you https://www.reddit.com/user/Siliticx */
+
+.profile-area .main .info {
+    margin-top: 50px;
+}
+.profile-area {
+    padding-bottom: 20px;
+}
+.force-height.profile-area-wrapper{
+min-height: 200px;
+}
+.profile-area-wrapper {
+    min-height: 200px;
+}
+/* https://www.reddit.com/user/Siliticx -- end*/
