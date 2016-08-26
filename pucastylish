@@ -29,20 +29,7 @@
 .compose-area-wrapper .filter-item {
     width: 100%;
 }
-@media screen and (min-width:600px) {
-    .grid .item.hover, .grid .item:hover {
-        -webkit-transition: none;
-        -moz-transition: none;
-        transition: none;
-        transform: none;
-        border: 1px solid white;
-    }
-    .grid .item.hover .bg,
-    .grid .item:hover .bg {
-        opacity: .85;
-        transform: scale(1.08);
-        z-index: 1
-    }
+
     .item .content .receiver .author .info .price.small {
         float: right;
         position: absolute;
@@ -69,7 +56,6 @@
     .item .content .receiver .author .user-name {
         text-shadow: 1px 1px 1px black, 1px -1px 1px black, -1px 1px 1px black, -1px -1px 1px black;
     }
-}
 }
 
 @-moz-document url-prefix("https://pucatrade.com/") {
