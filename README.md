@@ -15,8 +15,12 @@ install the "Stylish" addon to your browser and import the pucastylish script
 
 install Greasemonkey/Tampermonkey addon to your browser and import the nicerfuturesite.js script
 
+
 features:
-- trade packages are all the same height, 
+- trade packages are all the same height, (If you do like seeing all cards in a package in the package view, simply delete from the top of the stylish file, the following part:
+    ".send-card-area-wrapper .grid .item {
+    height: 300px !important;
+    }"
 
 - trade packages are leaner fitting five instead of four into one row,
 
