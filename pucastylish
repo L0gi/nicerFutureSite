@@ -56,6 +56,38 @@
     .item .content .receiver .author .user-name {
         text-shadow: 1px 1px 1px black, 1px -1px 1px black, -1px 1px 1px black, -1px -1px 1px black;
     }
+
+	.lightweight .send-card-area-wrapper .grid .item{
+    	-webkit-transition: none;
+         -moz-transition: none;
+         transition: none;
+         transform: none;
+         border: 1px solid black;
+    }
+   .lightweight .send-card-area-wrapper .grid .item:hover {
+         -webkit-transition: none;
+         -moz-transition: none;
+         transition: none;
+         transform: none;
+         border: 1px solid white;
+    }
+	.leightweight .send-card-area-wrapper .grid .item:hover .bg {
+        width: inherit;
+    	height: 270px;
+        min-width: 100%;
+        left: 0;
+        top: 0;
+        position: absolute;
+        z-index: -1;
+        opacity: .33;
+        background-position: bottom center;
+        background-size: cover;
+        -webkit-filter: blur(0);
+        -moz-filter: blur(0);
+        -o-filter: blur(0);
+        -ms-filter: blur(0);
+        filter: blur(0);
+    }
 }
 
 @-moz-document url-prefix("https://pucatrade.com/") {
@@ -290,4 +322,5 @@ dfn {
     min-width: 240px;
 }
 
+}
 }
