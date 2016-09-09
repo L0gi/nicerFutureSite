@@ -2,12 +2,15 @@
 screenshots: 
 
 http://imgur.com/a/vkpYC
+
 http://imgur.com/a/XgJOg
+
+http://imgur.com/a/wpPWG
 
 
 @Firefoxusers: As far as I understand you have to import each @-moz-document block into its own style when adding the styles in firefox
 
-@Chromeusers: Click on the Stylish button, go to "manage installed scripts", create a new script, now this is iportant: click on "impoart" and paste the pucastylish contentes there, then click overwrite style, give your newly created style a name and save it.
+@Chromeusers: Click on the Stylish button, go to "manage installed scripts", create a new script, now this is iportant: click on "import" and paste the pucastylish contentes there, then click overwrite style, give your newly created style a name and save it.
 
 Some scripts to make the new futuresite of pucatrade a bit more pleasing to the eye
 
@@ -22,6 +25,7 @@ features:
     height: 300px !important;
     }"
 
+- basic packge filter: http://imgur.com/a/wpPWG
 - trade packages are leaner fitting five instead of four into one row,
 
 - User info and Send Button are reordered to the top of a trade package, so they are always in a more predictable place
