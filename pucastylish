@@ -2,6 +2,7 @@
 .send-card-area-wrapper .grid .item {
     height: 300px !important;
 }
+
 @media screen and (min-width: 1300px) {
     .send-card-area-wrapper .grid .item {
         width: 19%;
@@ -88,6 +89,49 @@
         -ms-filter: blur(0);
         filter: blur(0);
     }
+
+    .btn.filterbtn{
+        float:right;
+        width:100%; 
+    }
+
+.filter-item.search.p-filter{
+	position:relative;
+    width:100px;
+    float:right;
+}
+
+
+.p-filter.search input{
+    float:right;
+    padding-left:0px;
+    padding-top:0px;
+    padding-bottom:0px;
+    padding-right:0px;
+    height:33%;
+    position:relative;
+    left:0px;
+    border:none;
+    text-align:center;
+}
+.filter-item.p-filter .label.current{
+    font-size:10pt;
+    padding-left:0px;
+    padding-top:2px;
+    text-align:center;
+}
+
+.p-filter.filter-input.minpoint{
+   
+}
+.p-filter.filter-input.mincard{
+}
+.p-filter.filter-input.maxcard{
+}
+
+
+
+
 }
 
 @-moz-document url-prefix("https://pucatrade.com/") {
