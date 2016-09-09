@@ -6,7 +6,7 @@ features:
 - trade packages are all the same height,
 
 - basic packge filter: http://imgur.com/a/wpPWG
-- 
+
 - trade packages are leaner fitting five instead of four into one row,
 
 - User info and Send Button are reordered to the top of a trade package, so they are always in a more predictable place
