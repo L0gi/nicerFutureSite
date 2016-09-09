@@ -22,9 +22,9 @@ features:
 
 There are now two versions you can install:
 
-The allinone script, or javascript and styles separately.
+The all-in-one script, or javascript and styles separately.
 
-allinone:
+all-in-one:
 install Grease-/Tampermonkey addon for your browser and import the "nicerfuturesitestyled.user.js" script.
 
 you are done. This script incorporates the necessary style changes.
