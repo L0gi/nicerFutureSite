@@ -117,7 +117,7 @@
         apply_filter_btn.onclick =function() {
             GM_setValue("minPoints", minPoint_f.value);
             GM_setValue("minCards", minCard_f.value);
-            GM_setValue("maxCards", maxCard_f.value);
+            GM_setValue("maxCards", "max");
             location.reload();
         };
 
