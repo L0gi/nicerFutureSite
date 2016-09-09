@@ -3,9 +3,9 @@
 Some scripts to make the new futuresite of pucatrade a bit more pleasing to the eye (http://imgur.com/a/vkpYC , http://imgur.com/a/XgJOg , http://imgur.com/a/wpPWG )
 
 ###features
-- trade packages are all the same height,
+- basic packge filter
 
-- basic packge filter: http://imgur.com/a/wpPWG
+- trade packages are all the same height,
 
 - trade packages are leaner fitting five instead of four into one row,
 
