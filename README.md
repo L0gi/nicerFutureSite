@@ -1,11 +1,11 @@
 # nicerFutureSite
 
-Some scripts to make the new futuresite of pucatrade a bit more pleasing to the eye (http://imgur.com/a/vkpYC , http://imgur.com/a/XgJOg , http://imgur.com/a/wpPWG )
+Some scripts to make the new futuresite of pucatrade a bit more pleasing to the eye + some convenience features
 
 ###features
-- basic packge filter
+- basic packge filter (http://imgur.com/a/wpPWG)
 
-- trade packages are all the same height,
+- trade packages are all the same height (http://imgur.com/a/vkpYC),
 
 - trade packages are leaner fitting five instead of four into one row,
 
@@ -13,7 +13,7 @@ Some scripts to make the new futuresite of pucatrade a bit more pleasing to the 
 
 - less empty space at the top of trade package
 
-- when clicking send the number of total cards in the bundle are shown at the bottom of the overlay, 
+- when clicking send the number of total cards in the bundle are shown at the bottom of the overlay (http://imgur.com/a/XgJOg), 
 
 - removed italics 
 
