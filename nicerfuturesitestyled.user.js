@@ -394,9 +394,13 @@
     if(GM_listValues().indexOf("maxCards") > -1){
         maxCards = GM_getValue("maxCards");
     }
+    
+    if(window.location.href == "https://pucatrade.com/trades/packages"){
+        waitForKeyElements ("#trades .item", actionFunction);
+        waitForKeyElements ("#trades .filter.filter-menu", addFilterDiv);
+    }
 
-
-    waitForKeyElements ("#trades .item", actionFunction);
+    
 
     function actionFunction (jNode) {
         var elements = document.getElementsByClassName("item");
@@ -422,9 +426,13 @@
 
     }
     
-    waitForKeyElements ("#trades .filter.filter-menu", addFilterDiv);
+
+
+    
+    
     function addFilterDiv(jNode){
         console.log(jNode);
+        console.log(window.location.href);
         
         var apply_filter_div = document.createElement("DIV");
         apply_filter_div.className += " filter-item search p-filter";
@@ -490,25 +498,25 @@
     //content has to be a single node of class "content" from the "item" class div on package view
     function filterPackage(content, minPoints, minCards, maxCards){
 
-        console.log("minPoints: " + minPoints + " minCards: " + minCards + " maxCards: " + maxCards + "\r\n");
-        console.log((parseInt(content.childNodes[0].textContent)));
+        //console.log("minPoints: " + minPoints + " minCards: " + minCards + " maxCards: " + maxCards + "\r\n");
+       // console.log((parseInt(content.childNodes[0].textContent)));
         var cards = getChildByName(content, "card");
         var count = countCards(cards);
-        console.log(minPoints);
+        //console.log(minPoints);
         
         if(maxCards == "max"){
             if((parseInt(content.childNodes[0].textContent) < minPoints) || (count<minCards)){
-                console.log((parseInt(content.childNodes[0].textContent)));
-                console.log(minPoints);
-                console.log((parseInt(content.childNodes[0].textContent) < minPoints));
+                //console.log((parseInt(content.childNodes[0].textContent)));
+                ////console.log(minPoints);
+               // console.log((parseInt(content.childNodes[0].textContent) < minPoints));
                 content.parentNode.style.display="none";
             }
         }else{
             if((parseInt(content.childNodes[0].textContent) < minPoints) || (count < minCards) || (count>maxCards)){
-                console.log((parseInt(content.childNodes[0].textContent)));
-                console.log(minPoints);
-                console.log((parseInt(content.childNodes[0].textContent) < minPoints));
-                console.log(maxCards);
+               ////// console.log((parseInt(content.childNodes[0].textContent)));
+                //console.log(minPoints);
+                //console.log((parseInt(content.childNodes[0].textContent) < minPoints));
+                //console.log(maxCards);
                 content.parentNode.style.display="none";
             }
         }
