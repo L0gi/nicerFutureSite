@@ -432,7 +432,6 @@
     
     function addFilterDiv(jNode){
         console.log(jNode);
-        console.log(window.location.href);
         
         var apply_filter_div = document.createElement("DIV");
         apply_filter_div.className += " filter-item search p-filter";
