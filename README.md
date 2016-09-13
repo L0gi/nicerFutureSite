@@ -3,7 +3,7 @@
 Some scripts to make the new futuresite of pucatrade a bit more pleasing to the eye + some convenience features
 
 ###features
-- basic packge filter (http://imgur.com/a/wpPWG)
+- basic packge filter (http://imgur.com/a/wpPWG) (now supports max number of cards, to allow for any number of cards in a package use "max" as the argument)
 
 - trade packages are all the same height (http://imgur.com/a/vkpYC),
 
