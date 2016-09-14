@@ -25,9 +25,11 @@ There are now two versions you can install:
 The all-in-one script, or javascript and styles separately.
 
 ####all-in-one
-install Grease-/Tampermonkey addon for your browser and import the "nicerfuturesitestyled.user.js" script.
+install Grease-/Tampermonkey addon for your browser and import the "nicerfuturesitestyled.user.js" script. 
 
-you are done. This script incorporates the necessary style changes.
+To import the script click above on the "nicerfuturesitestyled.user.js" file and then on "raw". Grease/Tampermonkey should automagically detect the userscript and ask you whether you'd like to install it. 
+
+click on install and you are done. This script incorporates the necessary style changes.
 
 ####seperate js and css
 
