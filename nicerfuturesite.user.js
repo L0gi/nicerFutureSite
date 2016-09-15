@@ -132,16 +132,19 @@
 
         var cards = getChildByName(content, "card");
         var count = countCards(cards);
-
+        var points = content.childNodes[0].textContent;
+        points = points.replace(",","");
+        points = parseInt(points)
+        
         if (maxCards == "max") {
-            if ((parseInt(content.childNodes[0].textContent) < minPoints) || (count < minCards)) {
+            if ((points < minPoints) || (count < minCards)) {
                 content.parentNode.style.display = "none";
                 return 1;
             } {
                 return 0;
             }
         } else {
-            if ((parseInt(content.childNodes[0].textContent) < minPoints) || (count < minCards) || (count > maxCards)) {
+            if ((points < minPoints) || (count < minCards) || (count > maxCards)) {
                 content.parentNode.style.display = "none";
                 return 1;
             } else {
