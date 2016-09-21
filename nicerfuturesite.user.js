@@ -50,25 +50,29 @@
     }
 
     if (window.location.href == "https://pucatrade.com/trades/packages") {
-        waitForKeyElements("#trades .item", actionFunction);
-        waitForKeyElements("#trades .filter.filter-menu", addFilterDiv);
+        waitForKeyElements("#trades .item", filterTradeAction);
+        waitForKeyElements("#trades .filter.filter-menu", addFilterDivAction);
         setTimeout(function() {
             GM_setValue("numPrevPackages", numPackages);
             location.reload();
         }, numMinutes*60*1000);
-        console.log("reload in:" + numMinutes);
+
+        $(window).load(function(){
+        if(numPrevPackages != numPackages){
+            alert.play();
+        }
+        });
     }
 
 
 
-    function actionFunction(jNode) {
+    function filterTradeAction(jNode) {
         var elements = document.getElementsByClassName("item");
         var currentChild = jNode.context;
         var content = null;
 
         content = getChildByName(currentChild, "content");
         var cards = getChildByName(content, "card");
-
         content.appendChild(cards);
 
         if (filterPackage(content, minPoints, minCards, maxCards)) {
@@ -76,14 +80,12 @@
         }else{
             numPackages++;
         }
-
-
     }
 
 
 
 
-    function addFilterDiv(jNode) {
+    function addFilterDivAction(jNode) {
 
         var apply_filter_div = document.createElement("DIV");
         apply_filter_div.className += " filter-item search p-filter";
@@ -204,27 +206,6 @@
         return cnt;
     }
 
-    function filterPackages(minPoints, minCards, maxCards) {
-        var packages = document.getElementsByClassName("item");
-
-
-        var currentChild = packages.item(0);
-        var nextChild = null;
-        var content = null;
-
-        while (currentChild !== null) {
-
-            nextChild = currentChild.nextSibling;
-            content = getChildByName(currentChild, "content");
-            if (content.childNodes[0].textContent <= minPoints) {
-                content.parentNode.style.display = "none";
-            }
-            currentChild = nextChild;
-        }
-
-
-    }
-
     function getChildByName(node, name) {
         var child = null;
         for (var i = 0; i < node.childNodes.length; i++) {
@@ -236,7 +217,7 @@
         return child;
     }
 
-    waitForKeyElements("body > undefined:nth-child(18) > div > span > div > div > div > div.tabs.tab-area > div.tab-content > div > div.items > div > span > div:nth-child(1)", actionFunction2);
+    waitForKeyElements("body > undefined:nth-child(21) > div > span > div > div > div > div.tabs.tab-area > div.tab-content.modal_glow", actionFunction2);
 
     function actionFunction2(jNode) {
 
@@ -246,14 +227,11 @@
         var totalcards = d.firstChild;
 
         var cost = document.getElementsByClassName("cost");
+        console.log("bla");
         cost[0].insertBefore(totalcards, cost[0].firstChild);
 
     }
     
-    $(window).load(function(){
-        if(numPrevPackages != numPackages){
-            alert.play();
-        }
-    });
+
 
 })();
