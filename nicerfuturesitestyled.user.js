@@ -377,9 +377,18 @@
         '' +
         '}'
     );
+
     var minPoints = 0;
     var minCards = 2;
     var maxCards = "max";
+    var numMinutes = 5;
+    var numPackages = 0;
+    var numPrevPackages = 0;
+    var alert = new Audio("https://l0gi.github.io/nicerFutureSite/alert.mp3");
+
+    if (GM_listValues().indexOf("numPrevPackages")> -1){
+        numPrevPackages = GM_getValue("numPrevPackages");
+    }
 
     if (GM_listValues().indexOf("minPoints") > -1) {
         minPoints = GM_getValue("minPoints");
@@ -393,30 +402,41 @@
         maxCards = GM_getValue("maxCards");
     }
 
+    if (GM_listValues().indexOf("numMinutes") > -1) {
+        numMinutes = GM_getValue("numMinutes");
+        //don't go lower than 30sec for reloads
+        //Due to pucas algorithms for regenerating trade packages it does not make too much sense anyways
+        if(numMinutes < 0.5){
+            numMinutes = 0.5;
+        }
+    }
+
     if (window.location.href == "https://pucatrade.com/trades/packages") {
         waitForKeyElements("#trades .item", actionFunction);
         waitForKeyElements("#trades .filter.filter-menu", addFilterDiv);
+        setTimeout(function() {
+            GM_setValue("numPrevPackages", numPackages);
+            location.reload();
+        }, numMinutes*60*1000);
+        console.log("reload in:" + numMinutes);
     }
 
 
 
     function actionFunction(jNode) {
         var elements = document.getElementsByClassName("item");
-        //var currentChild = elements[0];
         var currentChild = jNode.context;
-
         var content = null;
 
         content = getChildByName(currentChild, "content");
-
         var cards = getChildByName(content, "card");
-
 
         content.appendChild(cards);
 
-
         if (filterPackage(content, minPoints, minCards, maxCards)) {
             currentChild.parentElement.appendChild(currentChild);
+        }else{
+            numPackages++;
         }
 
 
@@ -440,8 +460,19 @@
         var minPoint_l = document.createElement("div");
         var minCard_l = document.createElement("div");
         var maxCard_l = document.createElement("div");
+        var reloadMin_d = document.createElement("div");
+        var reloadMin_f = document.createElement("input");
+        var reloadMin_l = document.createElement("div");
 
         apply_filter_btn.className += " btn filterbtn short deepshadow";
+
+        reloadMin_l.innerHTML = "Reload Time";
+        reloadMin_l.className += " label current";
+        reloadMin_d.className += " ";
+        reloadMin_f.className += " filter-input";
+        reloadMin_f.value = numMinutes;
+        reloadMin_d.appendChild(reloadMin_l);
+        reloadMin_d.appendChild(reloadMin_f);
 
         minPoint_l.innerHTML = "Min Points";
         minPoint_l.className += " label current";
@@ -474,15 +505,26 @@
         apply_filter_div.appendChild(minPoint_d);
         apply_filter_div.appendChild(minCard_d);
         apply_filter_div.appendChild(maxCard_d);
+        apply_filter_div.appendChild(reloadMin_d);
         apply_filter_div.appendChild(apply_filter_btn);
 
 
         jNode.context.appendChild(apply_filter_div);
 
         apply_filter_btn.onclick = function() {
-            GM_setValue("minPoints", minPoint_f.value);
-            GM_setValue("minCards", minCard_f.value);
-            GM_setValue("maxCards", maxCard_f.value); //until max cards are supported
+            if(!isNaN(minPoint_f.value)){
+                GM_setValue("minPoints", minPoint_f.value);
+            }
+            if(!isNaN(minCard_f.value)){
+                GM_setValue("minCards", minCard_f.value);
+            }
+            if(!isNaN(maxCard_f.value) || maxCard_f.value == "max"){
+                GM_setValue("maxCards", maxCard_f.value);
+            }
+            if(!isNaN(reloadMin_f.value)){
+                GM_setValue("numMinutes", reloadMin_f.value);
+            }
+            GM_setValue("numPrevPackages", numPackages);
             location.reload();
         };
 
@@ -493,19 +535,16 @@
 
         var cards = getChildByName(content, "card");
         var count = countCards(cards);
-        var points = content.childNodes[0].textContent;
-        points = points.replace(",","");
-        points = parseInt(points)
-        
+
         if (maxCards == "max") {
-            if ((points < minPoints) || (count < minCards)) {
+            if ((parseInt(content.childNodes[0].textContent) < minPoints) || (count < minCards)) {
                 content.parentNode.style.display = "none";
                 return 1;
             } {
                 return 0;
             }
         } else {
-            if ((points < minPoints) || (count < minCards) || (count > maxCards)) {
+            if ((parseInt(content.childNodes[0].textContent) < minPoints) || (count < minCards) || (count > maxCards)) {
                 content.parentNode.style.display = "none";
                 return 1;
             } else {
@@ -530,10 +569,8 @@
     function filterPackages(minPoints, minCards, maxCards) {
         var packages = document.getElementsByClassName("item");
 
-        //console.log(packages);
 
         var currentChild = packages.item(0);
-        //console.log(currentChild);
         var nextChild = null;
         var content = null;
 
@@ -541,10 +578,6 @@
 
             nextChild = currentChild.nextSibling;
             content = getChildByName(currentChild, "content");
-            //console.log(content);
-            //console.log(currentChild);
-            //console.log(minPoints);
-            //console.log(content.childNodes[0].textContent);
             if (content.childNodes[0].textContent <= minPoints) {
                 content.parentNode.style.display = "none";
             }
@@ -568,10 +601,8 @@
     waitForKeyElements("body > undefined:nth-child(18) > div > span > div > div > div > div.tabs.tab-area > div.tab-content > div > div.items > div > span > div:nth-child(1)", actionFunction2);
 
     function actionFunction2(jNode) {
-        //console.log("Now im running action function 2");
+
         var elements = document.getElementsByClassName("card-details");
-        //console.log("So many cards: ");
-        //console.log(elements.length);
         var d = document.createElement("div");
         d.innerHTML = "<span class=\"text letter\" >Cards: " + elements.length + "</span>";
         var totalcards = d.firstChild;
@@ -579,7 +610,12 @@
         var cost = document.getElementsByClassName("cost");
         cost[0].insertBefore(totalcards, cost[0].firstChild);
 
-        // jNode.css ("background", "yellow"); // example
     }
+    
+    $(window).load(function(){
+        if(numPrevPackages != numPackages){
+            alert.play();
+        }
+    });
 
 })();
