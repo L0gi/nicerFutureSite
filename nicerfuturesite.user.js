@@ -59,11 +59,11 @@
             location.reload();
         }, numMinutes*60*1000);
 
-        $(window).load(function(){
+        setTimeout(function(){
         if(numPrevPackages != numPackages){
             alert.play();
         }
-        });
+        }, 2500);
     }
 
 
