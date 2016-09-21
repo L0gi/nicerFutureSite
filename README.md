@@ -3,6 +3,8 @@
 Some scripts to make the new futuresite of pucatrade a bit more pleasing to the eye + some convenience features
 
 ###features
+- auto reload: you can set the packge view to auto reload in an interval of X minutes. If the number of available packages has changed from the previous load, the site plays an alert sound. 
+
 - basic packge filter (http://imgur.com/a/wpPWG) (now supports max number of cards, to allow for any number of cards in a package use "max" as the argument)
 
 - trade packages are all the same height (http://imgur.com/a/vkpYC),
