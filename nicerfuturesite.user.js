@@ -5,7 +5,7 @@
 // @description  try to take over the world!
 // @author       You
 // @match        https://pucatrade.com/*
-
+// @require     http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js
 // @require  https://gist.github.com/raw/2625891/waitForKeyElements.js
 // @grant   GM_getValue
 // @grant   GM_setValue
