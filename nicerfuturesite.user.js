@@ -15,43 +15,45 @@
 
 (function() {
     'use strict';
-    
-    var minPoints = 0;
-    var minCards = 2;
-    var maxCards = "max";
-    var numMinutes = 5;
-    var numPackages = 0;
-    var numPrevPackages = 0;
-    var alert = new Audio("https://l0gi.github.io/nicerFutureSite/alert.mp3");
-
-    if (GM_listValues().indexOf("numPrevPackages")> -1){
-        numPrevPackages = GM_getValue("numPrevPackages");
-    }
-
-    if (GM_listValues().indexOf("minPoints") > -1) {
-        minPoints = GM_getValue("minPoints");
-    }
-
-    if (GM_listValues().indexOf("minCards") > -1) {
-        minCards = GM_getValue("minCards");
-    }
-
-    if (GM_listValues().indexOf("maxCards") > -1) {
-        maxCards = GM_getValue("maxCards");
-    }
-
-    if (GM_listValues().indexOf("numMinutes") > -1) {
-        numMinutes = GM_getValue("numMinutes");
-        //don't go lower than 30sec for reloads
-        //Due to pucas algorithms for regenerating trade packages it does not make too much sense anyways
-        if(numMinutes < 0.5){
-            numMinutes = 0.5;
-        }
-    }
-
     if (window.location.href == "https://pucatrade.com/trades/packages") {
+        var minPoints = 0;
+        var minCards = 2;
+        var maxCards = "max";
+        var numMinutes = 5;
+        var numPackages = 0;
+        var numPrevPackages = 0;
+        var alert = new Audio("https://l0gi.github.io/nicerFutureSite/alert.mp3");
+
+        if (GM_listValues().indexOf("numPrevPackages")> -1){
+            numPrevPackages = GM_getValue("numPrevPackages");
+        }
+
+        if (GM_listValues().indexOf("minPoints") > -1) {
+            minPoints = GM_getValue("minPoints");
+        }
+
+        if (GM_listValues().indexOf("minCards") > -1) {
+            minCards = GM_getValue("minCards");
+        }
+
+        if (GM_listValues().indexOf("maxCards") > -1) {
+            maxCards = GM_getValue("maxCards");
+        }
+
+        if (GM_listValues().indexOf("numMinutes") > -1) {
+            numMinutes = GM_getValue("numMinutes");
+            //don't go lower than 30sec for reloads
+            //Due to pucas algorithms for regenerating trade packages it does not make too much sense anyways
+            if(numMinutes < 0.5){
+                numMinutes = 0.5;
+            }
+        }
+
+
         waitForKeyElements("#trades .item", filterTradeAction);
         waitForKeyElements("#trades .filter.filter-menu", addFilterDivAction);
+        waitForKeyElements("body > undefined:nth-child(21) > div > span > div > div > div > div.tabs.tab-area > div.tab-content.modal_glow", addTotalCardsAction);
+
         setTimeout(function() {
             GM_setValue("numPrevPackages", numPackages);
             location.reload();
@@ -83,10 +85,7 @@
     }
 
 
-
-
     function addFilterDivAction(jNode) {
-
         var apply_filter_div = document.createElement("DIV");
         apply_filter_div.className += " filter-item search p-filter";
 
@@ -170,9 +169,19 @@
 
     }
 
+    function addTotalCardsAction(jNode) {
+        var elements = document.getElementsByClassName("card-details");
+        var d = document.createElement("div");
+        d.innerHTML = "<span class=\"text letter\" >Cards: " + elements.length + "</span>";
+        var totalcards = d.firstChild;
+
+        var cost = document.getElementsByClassName("cost");
+        cost[0].insertBefore(totalcards, cost[0].firstChild);
+
+    }
+
     //content has to be a single node of class "content" from the "item" class div on package view
     function filterPackage(content, minPoints, minCards, maxCards) {
-
         var cards = getChildByName(content, "card");
         var count = countCards(cards);
 
@@ -216,22 +225,4 @@
         }
         return child;
     }
-
-    waitForKeyElements("body > undefined:nth-child(21) > div > span > div > div > div > div.tabs.tab-area > div.tab-content.modal_glow", actionFunction2);
-
-    function actionFunction2(jNode) {
-
-        var elements = document.getElementsByClassName("card-details");
-        var d = document.createElement("div");
-        d.innerHTML = "<span class=\"text letter\" >Cards: " + elements.length + "</span>";
-        var totalcards = d.firstChild;
-
-        var cost = document.getElementsByClassName("cost");
-        console.log("bla");
-        cost[0].insertBefore(totalcards, cost[0].firstChild);
-
-    }
-    
-
-
 })();
