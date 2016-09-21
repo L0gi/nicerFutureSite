@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>Nicerfuturesite by L0gi</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+  </head>
+  <body>
+    <section class="page-header">
+      <h1 class="project-name">Nicerfuturesite</h1>
+      <h2 class="project-tagline"></h2>
+      <a href="https://github.com/L0gi/nicerFutureSite" class="btn">View on GitHub</a>
+      <a href="https://github.com/L0gi/nicerFutureSite/zipball/master" class="btn">Download .zip</a>
+      <a href="https://github.com/L0gi/nicerFutureSite/tarball/master" class="btn">Download .tar.gz</a>
+    </section>
+
+    <section class="main-content">
+      <h1>
+<a id="nicerfuturesite" class="anchor" href="#nicerfuturesite" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>nicerFutureSite</h1>
+
+<p>Some scripts to make the new futuresite of pucatrade a bit more pleasing to the eye + some convenience features</p>
+
+<h3>
+<a id="features" class="anchor" href="#features" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>features</h3>
+
+<ul>
+<li><p>basic packge filter (<a href="http://imgur.com/a/wpPWG">http://imgur.com/a/wpPWG</a>) (now supports max number of cards, to allow for any number of cards in a package use "max" as the argument)</p></li>
+<li><p>trade packages are all the same height (<a href="http://imgur.com/a/vkpYC">http://imgur.com/a/vkpYC</a>),</p></li>
+<li><p>trade packages are leaner fitting five instead of four into one row,</p></li>
+<li><p>User info and Send Button are reordered to the top of a trade package, so they are always in a more predictable place</p></li>
+<li><p>less empty space at the top of trade package</p></li>
+<li><p>when clicking send the number of total cards in the bundle are shown at the bottom of the overlay (<a href="http://imgur.com/a/XgJOg">http://imgur.com/a/XgJOg</a>), </p></li>
+<li><p>removed italics </p></li>
+<li><p>trade package and list highlihgts changed from blurry scaling to simple white border</p></li>
+</ul>
+
+<h3>
+<a id="installation" class="anchor" href="#installation" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>installation</h3>
+
+<p>There are now two versions you can install:</p>
+
+<p>The all-in-one script, or javascript and styles separately.</p>
+
+<h4>
+<a id="all-in-one" class="anchor" href="#all-in-one" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>all-in-one</h4>
+
+<p>install Grease-/Tampermonkey addon for your browser and import the "nicerfuturesitestyled.user.js" script. </p>
+
+<p>To import the script click above on the "nicerfuturesitestyled.user.js" file and then on "raw". Grease/Tampermonkey should automagically detect the userscript and ask you whether you'd like to install it. </p>
+
+<p>click on install and you are done. This script incorporates the necessary style changes.</p>
+
+<h4>
+<a id="seperate-js-and-css" class="anchor" href="#seperate-js-and-css" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>seperate js and css</h4>
+
+<p>I would recommend this if you want to play around with the css yourself and tweak what puca looks like to your liking. In that case follow the instructions below:</p>
+
+<p>install the "Stylish" addon to your browser and import the pucastylish script
+install Greasemonkey/Tampermonkey addon to your browser and import the nicerfuturesite.user.js script</p>
+
+<p>@Firefoxusers: As far as I understand you have to import each @-moz-document block into its own style when adding the styles in firefox</p>
+
+<p>@Chromeusers: Click on the Stylish button, go to "manage installed scripts", create a new script, now this is iportant: click on "import" and paste the pucastylish contentes there, then click overwrite style, give your newly created style a name and save it.</p>
+
+<h3>
+<a id="misc" class="anchor" href="#misc" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>misc</h3>
+
+<p>If you do like seeing all cards in a package in the package view, simply delete from the top of the stylish file, the following part:
+    ".send-card-area-wrapper .grid .item {
+    height: 300px !important;
+    }"</p>
+
+      <footer class="site-footer">
+        <span class="site-footer-owner"><a href="https://github.com/L0gi/nicerFutureSite">Nicerfuturesite</a> is maintained by <a href="https://github.com/L0gi">L0gi</a>.</span>
+
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
+      </footer>
+
+    </section>
+
+  
+  </body>
+</html>
