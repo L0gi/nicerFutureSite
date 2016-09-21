@@ -1,6 +1,8 @@
 # nicerFutureSite
 
-Some scripts to make the new futuresite of pucatrade a bit more pleasing to the eye + some convenience features
+Some scripts to make the new futuresite of pucatrade a bit more pleasing to the eye + some convenience features. 
+
+The script is subject to changes, so make sure to check in now and then :). 
 
 ###features
 - auto reload: you can set the packge view to auto reload in an interval of X minutes. If the number of available packages has changed from the previous load, the site plays an alert sound. 
