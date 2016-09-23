@@ -379,7 +379,7 @@
         '}'
     );
 
-    if (window.location.href == "https://pucatrade.com/trades/packages") {
+    if (window.location.href.indexOf("https://pucatrade.com/trades/packages") != -1) {
         var minPoints = 0;
         var minCards = 2;
         var maxCards = "max";
